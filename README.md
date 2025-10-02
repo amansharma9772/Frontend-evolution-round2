@@ -1,9 +1,11 @@
-# React Posts & Post Detail Project
 
-This project is a simple React application built with **Tailwind CSS** that fetches posts from an API and displays them in a responsive, paginated grid. Clicking on a post opens a detailed view with a comments section. Users can add their own comments, which are saved in `localStorage`.
+## React Posts & User Data Project
 
 
----
+This project is a React application built with Tailwind CSS that contains two main modules:
+
+- **Posts & Post Detail Page** – fetches posts from an API, supports search, pagination, and a comments system with localStorage.
+- **User Data Table with Modal** – fetches user data, displays it in a table, highlights the selected row, and shows user details inside a modal.
 
 ## Features
 
@@ -24,10 +26,22 @@ This project is a simple React application built with **Tailwind CSS** that fetc
     - Shows 4 comments by default, with a "Show More" button to reveal all comments.
   - Back button to navigate to the posts page.
 
+  - **User Data Table with Modal**
+    - Fetch users from `https://jsonplaceholder.typicode.com/users`.
+    - Show data in a responsive table.
+    - Click row → highlight selected row in red.
+    - Open modal with detailed user info:
+      - Basic Info (name, username, email, phone, website)
+      - Company Info (name, catchPhrase, bs)
+      - Full Address (street, suite, city, zipcode, geo)
+  - When modal is closed → last selected row stays highlighted.
+
 - **Reusable Components**
   - `Card` for post display.
   - `SearchInput` for filtering posts.
   - `Pagination` component for navigation between pages.
+  -  `DataTable` – reusable table for user data.
+  -  `UserModal` – modal to show full user details.
 
 ---
 
@@ -62,45 +76,38 @@ File Structure
 src/
 ├─ component/
 │  ├─ Card.jsx
-│  ├─ PostDetail.jsx
+│  ├─ DataTable.jsx
+│  ├─ Pagination.jsx
+│  └─ PostDetail.jsx
 │  ├─ SearchInput.jsx
-│  └─ Pagination.jsx
+│  ├─ UserModal.jsx  
 ├─ DisplayPosts.jsx
+├─ UserData.jsx
 ├─ main.jsx
 └─ index.css
 
-Usage
+# for usertabale
 
-Open the app in your browser.
+Open your browser and go to:
 
-Browse the posts on the home page.
+http://localhost:5173/userdata 
 
-Use the search box to filter posts by title.
-
-Click on a post card to open the Post Detail page.
-
-View comments, add your own, and click "Show More" to see all comments.
-
-Technologies Used
-
+🛠 Technologies Used
 React 18
-
 React Router DOM 6
-
 Tailwind CSS
-
 Fetch API
-
 LocalStorage
-
 React Icons
-
-Notes
-
-The app uses jsonplaceholder.typicode.com for fake posts and comments.
-
-Comments persist on browser refresh using localStorage.
-
-Default comments are always added to ensure at least some comments are shown.
+📝 Notes
+Posts and Users data are from JSONPlaceholder.
+Comments persist on refresh using localStorage.
+Selected row in the User Table stays highlighted after modal close.
+Default comments ensure at least some comments always appear.
+🎯 Future Improvements
+Add search & filter for users.
+Add pagination in User Table.
+Enhance modal with two-column layout (Company & Address).
+Replace fake API with a real backend.
 
 

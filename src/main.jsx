@@ -7,6 +7,7 @@ import PostDetail from "./component/PostDetail.jsx";
 
 
 import "./index.css";
+import UserData from "./UserData.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById("root")).render(
       <Routes>
         <Route path="/" element={<DisplayPosts />} />
         <Route path="/post/:id" element={<PostDetail />} />
+        <Route path="/usertable" element={<UserData/>} />
       </Routes>
     </Router>
   </StrictMode>
