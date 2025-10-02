@@ -6,6 +6,7 @@ This project is a React application built with Tailwind CSS that contains two ma
 
 - **Posts & Post Detail Page** – fetches posts from an API, supports search, pagination, and a comments system with localStorage.
 - **User Data Table with Modal** – fetches user data, displays it in a table, highlights the selected row, and shows user details inside a modal.
+- **Show Images Gallery** - fetches images from an API, supports infinite scroll, lazy loading, filtering by album or images, toggling between grid and list views, lightbox with keyboard navigation, and favorites saved in localStorage with notifications.
 
 ## Features
 
@@ -36,12 +37,56 @@ This project is a React application built with Tailwind CSS that contains two ma
       - Full Address (street, suite, city, zipcode, geo)
   - When modal is closed → last selected row stays highlighted.
 
+  ## 2️⃣ Show Images Gallery Project
+
+### Features
+
+- **Dynamic Image Gallery**
+  - Fetches images from `https://picsum.photos/v2/list`.
+  - Infinite scroll with lazy loading.
+  - Filter options:
+    - **All** – show all images
+    - **Album** – show images grouped by album
+    - **Images** – show individual images
+  - Toggle view mode: **Grid** or **List**
+    - List view shows author name and current date.
+  - Click on an image → open **Lightbox**
+    - Keyboard navigation (← → keys)
+    - Custom aesthetic arrows
+    - Responsive on mobile and desktop
+  - Favorite images with heart icon
+    - Saves favorite images in `localStorage`
+    - Notification at top of page (green background)
+
+- **Performance Optimizations**
+  - Lazy image loading (`loading="lazy"`)
+  - Minimal re-renders using `React.memo`
+  - Responsive design using Tailwind CSS
+
 - **Reusable Components**
   - `Card` for post display.
   - `SearchInput` for filtering posts.
   - `Pagination` component for navigation between pages.
   -  `DataTable` – reusable table for user data.
   -  `UserModal` – modal to show full user details.
+
+---
+
+## Tech Stack Used
+
+- **Frontend**
+  - React 18
+  - Tailwind CSS
+  - React Router DOM 6
+  - React Icons
+
+- **APIs**
+  - JSONPlaceholder for posts & users
+  - Picsum Photos for images
+
+- **Storage & State**
+  - `localStorage` for comments and favorites
+  - React Hooks (`useState`, `useEffect`, `useRef`, `useCallback`)
 
 ---
 
@@ -78,11 +123,16 @@ src/
 │  ├─ Card.jsx
 │  ├─ DataTable.jsx
 │  ├─ Pagination.jsx
-│  └─ PostDetail.jsx
+│  ├─ PostDetail.jsx
 │  ├─ SearchInput.jsx
-│  ├─ UserModal.jsx  
+│  ├─ UserModal.jsx
+│  ├─ ImageCard.jsx
+│  ├─ FilterDropdown.jsx
+│  ├─ ViewToggle.jsx
+│  └─ Lightbox.jsx
 ├─ DisplayPosts.jsx
 ├─ UserData.jsx
+├─ ShowImages.jsx
 ├─ main.jsx
 └─ index.css
 
@@ -92,22 +142,33 @@ Open your browser and go to:
 
 http://localhost:5173/userdata 
 
-🛠 Technologies Used
-React 18
-React Router DOM 6
-Tailwind CSS
-Fetch API
-LocalStorage
-React Icons
-📝 Notes
-Posts and Users data are from JSONPlaceholder.
-Comments persist on refresh using localStorage.
-Selected row in the User Table stays highlighted after modal close.
-Default comments ensure at least some comments always appear.
-🎯 Future Improvements
+Deployment Links
+
+Posts & User Data Project: [YourDeploymentLinkHere]
+
+Show Images Gallery Project: [YourDeploymentLinkHere]
+
+Notes
+
+Data is fetched from external APIs.
+
+LocalStorage persists comments and favorite images.
+
+Fully responsive design for mobile and desktop.
+
+Infinite scroll optimized for performance.
+
+
+Future Improvements
+
 Add search & filter for users.
-Add pagination in User Table.
-Enhance modal with two-column layout (Company & Address).
-Replace fake API with a real backend.
+
+Pagination in User Table.
+
+Replace fake APIs with a real backend.
+
+Add fade animations in Lightbox and toast notifications.
+
+Enhance modal layout for better UX.
 
 
