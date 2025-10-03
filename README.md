@@ -95,12 +95,12 @@ This project is a React application built with Tailwind CSS that contains two ma
 1. Clone the repository:
 
 ```bash
-git clone <repository_url>
+git clone <https://github.com/amansharma9772/Frontend-evolution-round2>
 
 
 Navigate to the project folder:
 
-cd <project_folder>
+cd <posts_project>
 
 
 Install dependencies:
@@ -147,6 +147,24 @@ http://localhost:5173/userdata
 Open your browser and go to:
 
 http://localhost:5173/showimages 
+
+
+Special Notes
+Initially, the project was planned to use the JSONPlaceholder Photos API:
+// Not reliable: Often causes CORS or broken image issues
+fetch("https://jsonplaceholder.typicode.com/photos")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+However, since this API did not consistently serve proper images, we switched to the Picsum Photos API which is more stable for random images:
+// Stable API for image display
+fetch("https://picsum.photos/v2/list?page=1&limit=20")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
+
+
+👉 This ensures smooth image rendering, infinite scroll, filters, and lightbox features without frequent CORS or broken image problems.
+
 
 
 Notes
