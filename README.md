@@ -142,11 +142,12 @@ Open your browser and go to:
 
 http://localhost:5173/userdata 
 
-Deployment Links
+# Show Images Gallery Project:
 
-Posts & User Data Project: [YourDeploymentLinkHere]
+Open your browser and go to:
 
-Show Images Gallery Project: [YourDeploymentLinkHere]
+http://localhost:5173/showimages 
+
 
 Notes
 
